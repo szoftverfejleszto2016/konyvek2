@@ -61,4 +61,14 @@ public class DB {
             System.out.println("Nem sikerült a frissítés!");            
         }
     }
+    
+    public void torol(int id) {
+        try {
+            String s = "DELETE FROM adatok WHERE id=" + id + ";";
+            int sorok = parancs.executeUpdate(s);
+            System.out.println(sorok + " sor törölve");
+        } catch (SQLException ex) {
+            System.out.println("Nem sikerült a törlés!"); 
+        }
+    }
 }

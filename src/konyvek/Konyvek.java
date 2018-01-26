@@ -10,7 +10,7 @@ public class Konyvek {
 
     public static void main(String[] args) {
         DB ab = new DB();
-        Scanner bill = new Scanner(System.in);
+        Scanner bill = new Scanner(System.in,"cp1250");
         boolean tovabb = true;
         String szerzo, cim, eredeti;
         int ev;
@@ -39,7 +39,10 @@ public class Konyvek {
                     ab.uj(szerzo, cim, eredeti, ev);
                     break;
                 case '3':
-                    
+                    System.out.print("Törlendő könyv azonosítója: ");
+                    int id = bill.nextInt();
+                    bill.nextLine();
+                    ab.torol(id);
                     break;
                 default:
                     tovabb = false;
